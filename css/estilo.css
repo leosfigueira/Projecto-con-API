@@ -184,13 +184,14 @@ a.navbar-brand:hover {
 }
 #frases {
   font-family: "Bangers", cursive;
-  width: 55%;
+  width: 80%;
   float: right;
   border-top: 40px;
   padding-top: 80px;
   font-size: 40px;
   font-family: "Bangers", cursive;
   color: red;
+  text-align: center;
 }
 #frasesss h6 {
   width: 55%;
