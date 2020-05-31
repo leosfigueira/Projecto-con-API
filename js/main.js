@@ -28,12 +28,12 @@ function getMovies(nombre, anio, tipo) {
   axios
     .get(
       "http://www.omdbapi.com/?s=" +
-        nombre +
-        "&y=" +
-        anio +
-        "&type=" +
-        tipo +
-        "&apikey=effcba2"
+      nombre +
+      "&y=" +
+      anio +
+      "&type=" +
+      tipo +
+      "&apikey=effcba2"
     )
     .then((response) => {
       //console.log(response);

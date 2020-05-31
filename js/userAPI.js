@@ -1,4 +1,4 @@
-$(document).ready(traer());
+//$(document).ready(traer());
 var contenido = document.getElementById("contenidos");
 function traer() {
   fetch("https://randomuser.me/api/")
@@ -14,3 +14,4 @@ function traer() {
         `;
     });
 }
+traer();

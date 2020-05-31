@@ -49,7 +49,7 @@ function traerTweets() {
     },
     dataType: "json",
     success: function (tuits) {
-      console.log(tuits);
+      // console.log(tuits);
       let output = "";
       $.each(tuits, (index, tuit) => {
         output += `
@@ -63,9 +63,9 @@ function traerTweets() {
        <br> <br>
               `;
       });
-      console.log(output);
+      // console.log(output);
       $("#tweets").html(output);
-      console.log("#tweets");
+      //console.log("#tweets");
     },
     error: function (req, status, err) {
       console.log(req, status, err);
