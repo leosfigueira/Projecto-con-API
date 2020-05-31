@@ -1,65 +1,59 @@
-$(function()  { 
-  $( '#idbuscar2').on('click', (e) => {     
-    let nombre = $('#idnombre').val();
-    let anio = $('#idanio').val();
-    let tipo = $('#idtipo').val();
-    getMovies(nombre,anio,tipo);
+$(function () {
+  $("#idbuscar2").on("click", (e) => {
+    let nombre = $("#idnombre").val();
+    let anio = $("#idanio").val();
+    let tipo = $("#idtipo").val();
+    getMovies(nombre, anio, tipo);
     //window.setTimeout("displayt(0)", 300);
     //window.onload=displayt('0');
-
     e.preventDefault();
-      
-      elefocus = document.getElementById("idnombre");
-       elefocus.focus();
-      elemento = document.getElementById("desplegable");
-     
-      elemento.setAttribute("aria-expanded", false);
-      elemento2 = document.getElementById("menu");
-      elemento2.setAttribute("class", "dropdown-menu dropdown-menu-right");
+    elefocus = document.getElementById("idnombre");
+    elefocus.focus();
+    elemento = document.getElementById("desplegable");
+    elemento.setAttribute("aria-expanded", false);
+    elemento2 = document.getElementById("menu");
+    elemento2.setAttribute("class", "dropdown-menu dropdown-menu-right");
   });
 });
-
-
-$(document).ready(() =>  {
- 
-  $( '#idbuscar').on('click', (e) => {
-    let nombre = $('#idnombre').val();
-    let anio = $('#idanio').val();
-    let tipo = $('#idtipo').val();
-    getMovies(nombre,anio,tipo);
-       e.preventDefault();
+$(document).ready(() => {
+  $("#idbuscar").on("click", (e) => {
+    let nombre = $("#idnombre").val();
+    let anio = $("#idanio").val();
+    let tipo = $("#idtipo").val();
+    getMovies(nombre, anio, tipo);
+    e.preventDefault();
   });
 });
-    
-function getMovies(nombre, anio, tipo){
-  axios.get('http://www.omdbapi.com/?s='+nombre+ '&y='+ anio + '&type='+ tipo + '&apikey=effcba2')
-     .then((response) => {
-      console.log(response);
+function getMovies(nombre, anio, tipo) {
+  axios
+    .get(
+      "http://www.omdbapi.com/?s=" +
+        nombre +
+        "&y=" +
+        anio +
+        "&type=" +
+        tipo +
+        "&apikey=effcba2"
+    )
+    .then((response) => {
+      //console.log(response);
       let movies = response.data.Search;
-      console.log(response.data.Response);
-      console.log(response.data.Search);
-      let output = '';
-      
-      
-     if ((response.data.Search) == undefined) {
-        console.log('data false');
-  
-          output += `
+      //console.log(response.data.Response);
+      // console.log(response.data.Search);
+      let output = "";
+      if (response.data.Search == undefined) {
+        console.log("data false");
+        output += `
           <div class="col-md-12">
             <div class="well text-center">
-              
               <h5>No hay peliculas para mostrar con los datos buscados</h5>
-              
             </div>
           </div>
         `;
-        $('#movies').html(output);
-      }
-      else{
-
-      
-      $.each(movies, (index, movie) => {
-        output += `
+        $("#movies").html(output);
+      } else {
+        $.each(movies, (index, movie) => {
+          output += `
           <div class="col-md-3" id="${index}" style="display:none" >
             <div class="well text-center"  >
               <img src="${movie.Poster}">
@@ -69,93 +63,65 @@ function getMovies(nombre, anio, tipo){
           </div>
  <br> <br>
         `;
-      });
-      output+=`
+        });
+        output += `
  <br>
  <br>
       <div id="pag" class="container">
-        
         <nav aria-label="Page navigation example">
           <ul class="pagination pg-blue justify-content-center">
             <li class="page-item ">
-            
             </li>
             <li class="page-item"><a class="page-link" onclick="displayt(0)">1</a></li>
             <li class="page-item"><a class="page-link" onclick="displayt(4)">2</a></li>
             <li class="page-item"><a class="page-link" onclick="displayt(8)">3</a></li>
             <li class="page-item">
-              
             </li>
           </ul>
         </nav>
       </div>
 <br>
-   
       `;
-
-      $('#movies').html(output);
-      window.setTimeout("displayt(0)", 1000);
-
-    
-    }})
+        $("#movies").html(output);
+        window.setTimeout("displayt(0)", 1000);
+      }
+    })
     .catch((err) => {
       console.log(err);
     });
-
 }
-
 function displayt(id) {
-  console.log(id);
-  
- 
-   
-var k;  
-  for (k=0; k<10; k++)
-   {
-        
-    if (document.getElementById(k).style.display="block" )
-       {      document.getElementById(k).style.display="none";
-        }
-  }
-  var i;  
-  j=0;
-  for (i=0; i<4; i++) {
-        let j=i+id;
-        console.log(j);
-        
-        if (j<11){
-       
-    document.getElementById(j).style.display = "block";
-
-
-         }
+  //console.log(id);
+  var k;
+  for (k = 0; k < 10; k++) {
+    if ((document.getElementById(k).style.display = "block")) {
+      document.getElementById(k).style.display = "none";
     }
   }
-
-function movieSelected(id){
-  sessionStorage.setItem('movieId', id);
-  window.location = 'movie.html';
-  return false;
-    
+  var i;
+  j = 0;
+  for (i = 0; i < 4; i++) {
+    let j = i + id;
+    //console.log(j);
+    if (j < 11) {
+      document.getElementById(j).style.display = "block";
+    }
+  }
 }
-
-
-
-function getMovie(){
-  let movieId = sessionStorage.getItem('movieId');
-
-  axios.get('http://www.omdbapi.com?i='+movieId+ '&apikey=effcba2')
+function movieSelected(id) {
+  sessionStorage.setItem("movieId", id);
+  window.location = "movie.html";
+  return false;
+}
+function getMovie() {
+  let movieId = sessionStorage.getItem("movieId");
+  axios
+    .get("http://www.omdbapi.com?i=" + movieId + "&apikey=effcba2")
     .then((response) => {
-      console.log(response);
+      //console.log(response);
       let movie = response.data;
-
-      let output =`
-
-        
-   
-
+      let output = `
                 <div class="form-group">
-               
                 <input name="titulo" type="hidden" readonly="readonly" value=" ${movie.Title}" >
                 <input name="poster" type="hidden" class="form-control" readonly="readonly"  value="${movie.Poster}" >
                 <input name="genero" type="hidden" class="form-control" readonly="readonly"  value=" ${movie.Genre}" >
@@ -167,18 +133,10 @@ function getMovie(){
                 <input name="actores" type="hidden" class="form-control" readonly="readonly"  value=" ${movie.Actors}" >
                 <input name="trama" type="hidden" class="form-control" readonly="readonly"  value=" ${movie.Plot}" >
                 <input name="imbdid" type="hidden" class="form-control" readonly="readonly"  value="${movie.imdbID}" >
-
-                
                 </div>
-               
-
-            
-
  <br> 
                 <br>
                 <br> 
-               
-	
          </form>    
       </div>
             <div  class="row">
@@ -200,7 +158,6 @@ function getMovie(){
             </div>
     <br>
     <br>
-
             <div class="col-md-11">
               <div class="well">
                 <h3>Trama</h3>
@@ -211,12 +168,10 @@ function getMovie(){
               </div>
             </div>        
       `;
-
-      $('#movie').html(output);
+      $("#movie").html(output);
       //console.log(movie.Actors);
     })
     .catch((err) => {
       console.log(err);
     });
- 
 }
