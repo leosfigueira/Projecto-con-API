@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> 
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>API Twitter</title>
+    
+   
+ <!--   --> 
+
+<!-- parece q no sirve	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> -->
+<!-- 	<link rel="stylesheet" href="css/style.css"> -->
+	<!--<link rel="stylesheet" href="css/bootstrap.css"> -->
+   <!-- <link rel="stylesheet" href="css/flat-ui.css">-->
+
+	<!--<script src="js/jquery-1.9.1.js"></script> -->
+	
+	
+</head>
+<body>
+
+    <header class="flex-column flex-md-row bd-navbar" >
+        <div id="logo">
+            <a href="index.html"><img src="images/mural.jpg" align="left"></a> 
+            <h1 class="bd-title">TP Nro 1- Figueira, Leonel</h1>
+        </div>
+    </header>
+    
+    <body>
+    
+<nav id="menu1">
+    
+        <ul >
+            <li><a href="peliculas2.html">Peliculas</a></li>
+            <li><a href="user.html">Usuario Aleatorio</a></li>
+            <li><a  href="twitter.html">Twiiter</a></li>
+            
+           
+        </ul>
+            
+</nav>			
+    
+    <section id="contenido">
+        <h1 class="container my-5 text-center"> Búsqueda de tweets</h1>
+       
+  <div class="container my-5 text-center">
+    <section class="tw">
+		<p>
+            <div class="input-group flex-nowrap">
+                
+                <input id="user" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                <button id="traerTweets"  class="btn btn-primary" onclick="traerTweets()"  >Obtener tweets</button>  
+            </div>
+		</p>
+			
+				
+		<h4>Timeline</h4>
+		
+        <div class="mt-5"  id="tweets" >
+             
+              
+        </div>
+	</section>
+        
+    </div>
+</div>
+
+<button  class="btn btn-outline-danger" onclick="getToken();">Renovar token</button>
+    </section>
+    
+    <footer>
+       
+        <p> TygWeb   2020 &copy;       .
+       
+    </p>
+    </footer>
+
+  
+ 
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="js/twitter.js"></script>   
+    
+</body>
+</html>

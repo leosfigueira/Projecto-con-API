@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+      
+   <!-- diseño desplegable-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> 
+          
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          
+   <!-- habilita desplegable -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        
+       <meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>TP 1 - Tecnologia y gestion web - Figueira Leonel</title>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+      
+	</head>
+
+				
+		<header class="flex-column flex-md-row bd-navbar" >
+			<div id="logo">
+				<a href="index.html"><img src="images/mural.jpg" align="left"></a> 
+				<h1 class="bd-title">TP Nro 1- Figueira, Leonel</h1>
+			</div>
+        </header>
+        
+		<body>
+		
+	<nav id="menu1">
+		
+			<ul >
+				<li><a href="peliculas2.html">Peliculas</a></li>
+        <li><a onclick="traer()" href="user.html">Usuario Aleatorio</a></li>
+        <li><a  href="twitter.html">Twiiter</a></li>
+			</ul>
+				
+    </nav>			
+		
+		
+
+		<section id="contenido">
+            
+     <div class="container">
+        <div class="jumbotron">
+        
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3 col-sm-8 offset-sm-2 col-12">
+            <h3 class="text-center text-light">Buscar una pelicula</h3> 
+           
+            <div class="input-group" id="adv-search">
+              <input  id="idnombre" type="text" list="ultimasbus" autocomplete="off" class="form-control form-control-search" placeholder="Buscar Pelicula" />
+              <div class="input-group-btn">
+                <div class="btn-group" role="group">
+                  <div class="dropdown dropdown-lg">
+                    <button type="button" id="desplegable" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </button>  
+                    <div class="dropdown-menu dropdown-menu-right" id="menu" role="menu">
+                      <form>
+                        <div class="form-group" >
+                          <label for="category" class="text-dark">Tipo</label>
+                          <select id="idtipo" class="form-control" id="category">
+                            <option value="" selected>Tipo (Pelicula/Serie)</option>
+                            <option value="movie">Película</option>
+                            <option value="series">Serie</option>
+                            <option value="episode">Episodio</option>
+                        
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="contain">Año</label>
+                         <input id="idanio"  class="form-control" type="text" />
+                        </div>
+                        
+                        <div class="form-group">
+                          <label for="contain">Género</label>
+                          <select class="form-control">
+                            <option value="" selected>Todos</option>
+                            <option value="1">Drama</option>
+                            <option value="2">Acción</option>
+                            <option value="3">Terror</option>
+                            <option value="4">Comedia</option>
+                        </select>
+                        </div>
+                        <hr>
+                        <div class="form-group text-center">
+                          <button id="idbuscar2" type="submit" action="" onclick="validatefield()" class="btn btn-primary" >Buscar</button>
+                          <button type="button" class="btn btn-link"  onclick="remove()">Borrar Historial</button>
+                        </div>
+                      </form>                            
+                    </div>
+                  </div>
+                  <button id="idbuscar" type="submit" action="" onclick="validatefield()" class="btn btn-primary"><span class="fa fa-search" aria-hidden="true"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <datalist id="ultimasbus">
+        <h3>Últimas Búsquedas</h3> 
+        <p id="demo"></p>
+    
+      </datalist>
+      
+
+         <!--   
+      
+      <div class="container-fluid">
+          
+           <div id="busquedas" style="display:none"  class="container-fluid">
+              <h5>Últimas Búsquedas</h5>
+               <div class="text"> </div>
+              <p id="demo2"></p>
+              <button type="button" class="btn btn-info" onclick="remove()">Limpiar lista</button>
+              <button type="button" class="btn btn-info" onclick="ocultarb()">Ocultar lista</button>
+            </div>
+        </div>
+ --> 
+    <div class="container-fluid">
+        <div id="movies" class="row">
+             
+              
+          </div>
+       
+					
+		</section>
+
+        <footer>
+			<p> TygWeb   2020 &copy;       .</p>
+		</footer>
+	
+		
+        <script src="scripts.js"></script>	
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/main.js"></script> 
+  <script type="text/javascript" src="js/buscar.js"></script>		
+  <script src="js/userAPI.js"></script>		
+</body>				   
+	
+</html>
