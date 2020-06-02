@@ -1,7 +1,7 @@
 function getdata() {
   let countryselected = $("#idpais").val();
   axios
-    .get("https://api.covid19api.com/total/country/argentina"
+    .get("https://api.covid19api.com/total/country/"+countryselected +""
       //"https://api.covid19api.com/countries"
       //"https://api.covid19api.com/all"
      // "https://api.covid19api.com/dayone/country/" +
