@@ -1,4 +1,4 @@
-function getdata() {
+function getdatacovid() {
   let countryselected = $("#idpais").val();
   axios
     .get("https://api.covid19api.com/summary"
@@ -33,3 +33,4 @@ function getdata() {
       $("#tbody").html(output);
     });
 }
+ getdatacovid() ;
