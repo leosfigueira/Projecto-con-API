@@ -296,6 +296,7 @@ section h4 {
   padding: 8px 0;
   text-align: center;
 }
+/*
 @media (min-width: 960px) {
   #movies .col-md-3 .well {
     height: 390px;
@@ -304,3 +305,4 @@ section h4 {
     height: 240px;
   }
 }
+*/
