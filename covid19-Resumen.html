@@ -25,7 +25,7 @@
             <li><a href="user.html" onclick="traer()">Usuario Aleatorio</a></li>
             <li><a href="twitter.html">Twiiter</a></li>
             <li><a href="covid19.html">Covid-19 - Casos por país</a></li>
-              <li><a href="covid19-Resumen.html">Covid-19 - Resumen</a></li>
+      			<li><a href="covid19-Resumen.html">Covid-19 - Resumen</a></li>
         </ul>
     </nav>
 
@@ -36,27 +36,6 @@
 
             <button class="btn btn-danger w-100" onclick="getdata()">Obtener datos actualizados</button>
             <div class="form-group">
-
-                <label class="text-dark" for="category"></label>
-                <select onclick="getdata()" class="form-control" id="idpais">
-                    <option value="Argentina">Argentina</option>
-                    <option value="Brazil">Brasil</option>
-                    <option value="chile">Chile</option>
-                    <option value="Cuba">Cuba</option>
-                    <option value="Colombia">Colombia</option>
-                    <option value="Peru">Peru</option>
-                    <option value="Uruguay">Uruguay</option>
-                    <option value="Paraguay">Paraguay</option>
-                    <option value="Bolivia">Bolivia</option>
-                    <option value="Italy">Italia</option>
-                    <option value="Spain">España</option>
-                    <option value="Venezuela">Venezuela</option>
-                    <option value="Mexico">Mexico</option>
-                    <option value="Ecuador">Ecuador</option>
-                    <option value="Japan">Japon</option>
-                    <option value="Sweden">Suecia</option>
-                </select>
-
                 <div class="mt-5" id="contenidos">
                     <div id="respuesta" style="display:none">
                         <table id="tabla" class="table table-dark" class="table-responsive"  >
@@ -65,10 +44,12 @@
                                     <th scope="col">#</th>
                                     <th scope="col">País</th>
                                     <th scope="col">Fecha</th>
-                                    <th scope="col">Casos Confirmados</th>
-                                    <th scope="col">Casos Activos</th>
-                                    <th scope="col">Casos Recuperados</th>
-                                    <th scope="col">Fallecidos</th>
+                                    <th scope="col">Nuevos Casos Confirmados</th>
+                                    <th scope="col">Nuevas muertes</th>
+                                    <th scope="col">Nuevos Recuperados</th>
+                                    <th scope="col">Total de confirmados</th>
+                                    <th scope="col">Total de fallecidos</th>
+                                    <th scope="col">Total de recuperados</th>
                                 </tr>
                             </thead>
                             <tbody id="tbody">
@@ -85,7 +66,7 @@
     </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--<script src="js/main.js"></script>-->
-    <script src="js/covid.js"></script>
+    <script src="js/covidsummary.js"></script>
     <!--<script type="text/javascript" src="js/buscar.js"></script>-->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <!--<script src="js/userAPI.js"></script>-->
