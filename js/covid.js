@@ -1,12 +1,13 @@
 function getdata() {
   let countryselected = $("#idpais").val();
   axios
-    .get("https://api.covid19api.com/total/country/"+countryselected +""
+    .get(
+      "https://api.covid19api.com/total/country/" + countryselected + ""
       //"https://api.covid19api.com/countries"
       //"https://api.covid19api.com/all"
-     // "https://api.covid19api.com/dayone/country/" +
-       // countryselected +
-        //"/status/confirmed"
+      // "https://api.covid19api.com/dayone/country/" +
+      // countryselected +
+      //"/status/confirmed"
     )
     .then((response) => {
       document.getElementById("respuesta").style.display = "block";
@@ -17,7 +18,7 @@ function getdata() {
       $.each(countries, (index, country) => {
         output += `
             <tr>
-                        <th scope="row">${index}</th>
+                        <td scope="row">${index}</td>
                         <td id="country">${country.Country}</td>
                         <td id="date">${country.Date}</td>
                         <td id="cases">${country.Confirmed}</td>

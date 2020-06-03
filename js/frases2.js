@@ -46,5 +46,13 @@ function fraseAleatoria() {
 	console.log("co2 letra " + co2);
 	//$("#frases").html(Cita[mostrar]);
 	//document.write(Cita[mostrar]);
+
 }
+
 fraseAleatoria();
+
+setInterval('fraseAleatoria()', 4000);
+
+
+
+

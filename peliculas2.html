@@ -2,21 +2,15 @@
 <html lang="es">
 
 <head>
-  <link type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    rel="stylesheet">
+  <link type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- diseño desplegable-->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- habilita desplegable -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-    integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-    crossorigin="anonymous"></script>
-  <!-- 
-    <meta name="viewport" content="width=device-width, initial-scale=1">Esto es un comentario -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- Esto es un comentario -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TP 1 - Tecnologia y gestion web - Figueira Leonel</title>
   <link type="text/css" href="css/estilo.css" rel="stylesheet">
 </head>
@@ -28,13 +22,13 @@
 </header>
 
 <body>
-  <nav id="menu1">
+  <nav class="side-nav navbar navbar-default" id="menu1">
     <ul>
       <li><a href="peliculas2.html">Peliculas</a></li>
-      <li><a href="user.html" >Usuario Aleatorio</a></li>
+      <li><a href="user.html">Usuario Aleatorio</a></li>
       <li><a href="twitter.html">Twiiter</a></li>
       <li><a href="covid19.html">Covid-19 - Casos por país</a></li>
-      <li><a href="covid19-Resumen.html" >Covid-19 - Resumen</a></li>
+      <li><a href="covid19-Resumen.html">Covid-19 - Resumen</a></li>
     </ul>
   </nav>
   <section id="contenido">
@@ -44,13 +38,11 @@
           <div class="col-lg-6 offset-lg-3 col-sm-8 offset-sm-2 col-12">
             <h3 class="text-center text-light">Buscar una pelicula</h3>
             <div class="input-group" id="adv-search">
-              <input class="form-control form-control-search" id="idnombre" type="text" list="ultimasbus"
-                autocomplete="off" placeholder="Buscar Pelicula">
+              <input class="form-control form-control-search" id="idnombre" type="text" list="ultimasbus" autocomplete="off" placeholder="Buscar Pelicula">
               <div class="input-group-btn">
                 <div class="btn-group" role="group">
                   <div class="dropdown dropdown-lg">
-                    <button class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" id="desplegable"
-                      data-toggle="dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+                    <button class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" id="desplegable" data-toggle="dropdown" type="button" aria-expanded="false" aria-haspopup="true">
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" id="menu" role="menu">
                       <form>
@@ -79,15 +71,13 @@
                         </div>
                         <hr>
                         <div class="form-group text-center">
-                          <button class="btn btn-primary" id="idbuscar2" type="submit" action
-                            onclick="validatefield()">Buscar</button>
+                          <button class="btn btn-primary" id="idbuscar2" type="submit" action onclick="validatefield()">Buscar</button>
                           <button class="btn btn-link" type="button" onclick="remove()">Borrar Historial</button>
                         </div>
                       </form>
                     </div>
                   </div>
-                  <button class="btn btn-primary" id="idbuscar" type="submit" action onclick="validatefield()"><span
-                      class="fa fa-search" aria-hidden="true"></span></button>
+                  <button class="btn btn-primary" id="idbuscar" type="submit" action onclick="validatefield()"><span class="fa fa-search" aria-hidden="true"></span></button>
                 </div>
               </div>
             </div>

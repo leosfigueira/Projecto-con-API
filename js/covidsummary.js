@@ -4,9 +4,9 @@ function getdatacovid() {
     .get("https://api.covid19api.com/summary"
       //"https://api.covid19api.com/countries"
       //"https://api.covid19api.com/all"
-     // "https://api.covid19api.com/dayone/country/" +
-       // countryselected +
-        //"/status/confirmed"
+      // "https://api.covid19api.com/dayone/country/" +
+      // countryselected +
+      //"/status/confirmed"
     )
     .then((response) => {
       document.getElementById("respuesta").style.display = "block";
@@ -33,4 +33,4 @@ function getdatacovid() {
       $("#tbody").html(output);
     });
 }
- getdatacovid() ;
+getdatacovid();

@@ -5,8 +5,9 @@
 body {
   background-color: black;
   color: white;
-  height: 100%;
+
   width: 100%;
+  height: 100vw;
 }
 div.jumbotron {
   background-color: black;
@@ -124,6 +125,7 @@ a.navbar-brand:hover {
   display: inline-block;
   font-family: cursive;
   font-size: 70%;
+  padding-left: 2%;
 }
 #menu1 a:hover {
   background: red;
@@ -151,23 +153,23 @@ a.navbar-brand:hover {
 }
 #logo h1 {
   font-family: "Fantasy";
-  font-size: 300%;
+  font-size: 8vh;
   letter-spacing: 4px;
   line-height: 180%;
   background: red;
   color: white;
   text-align: center;
   width: 100%;
-  height: 200px;
+  height: 165px;
   margin-bottom: 0px;
+  padding-top: 25px;
   padding-left: 20px;
   justify-content: center;
-  align-items: center;
 }
 #logo img {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
 }
 #contenido {
   width: 80%;
@@ -224,7 +226,7 @@ a.navbar-brand:hover {
     rgba(255, 0, 0, 1)
   );
   font-size: 25px;
-  height: 100vh;
+  height: 100%;
   width: 20%;
   float: left;
   position: absolute;
@@ -271,6 +273,7 @@ header h1 .tw {
   margin-top: 20px;
   padding: 10px 0;
   text-align: center;
+  align-content: center;
   width: 550px;
 }
 section .tw {
@@ -296,6 +299,9 @@ section h4 {
   padding: 8px 0;
   text-align: center;
 }
+.mt-5 {
+  //display: inline-table;
+}
 /*
 @media (min-width: 960px) {
   #movies .col-md-3 .well {
@@ -306,3 +312,8 @@ section h4 {
   }
 }
 */
+html,
+body,
+.side-nav {
+  height: 100%;
+}

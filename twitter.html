@@ -6,8 +6,8 @@
         integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link type="text/css" href="css/estilo.css" rel="stylesheet">
     <meta charset="UTF-8">
-    <!-- 
-    <meta name="viewport" content="width=device-width, initial-scale=1">Esto es un comentario -->
+    <!-- Esto es un comentario -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>API Twitter</title>
 </head>
 
@@ -20,13 +20,13 @@
     </header>
 
     <body>
-        <nav id="menu1">
+        <nav class="side-nav navbar navbar-default" id="menu1">
             <ul>
                 <li><a href="peliculas2.html">Peliculas</a></li>
                 <li><a href="user.html">Usuario Aleatorio</a></li>
                 <li><a href="twitter.html">Twiiter</a></li>
                 <li><a href="covid19.html">Covid-19 - Casos por país</a></li>
-                 <li><a href="covid19-Resumen.html" onclick="getdata()">Covid-19 - Resumen</a></li>
+                <li><a href="covid19-Resumen.html" onclick="getdata()">Covid-19 - Resumen</a></li>
             </ul>
         </nav>
         <section id="contenido">
@@ -38,9 +38,10 @@
                         <input class="form-control" id="user" type="text" aria-describedby="addon-wrapping"
                             aria-label="Username" placeholder="Ingresá el nombre de usuario">
                         <button class="btn btn-primary" id="traerTweets" onclick="traerTweets()">Obtener tweets</button>
-                        
+
                     </div>
-                    <span style="color:black">Ingresa un usuario o presioná "Obtener tweets" para que busque un usuario aleatorio</span>
+                    <span style="color:black">Ingresa un usuario o presioná "Obtener tweets" para que busque un usuario
+                        aleatorio</span>
                     </p>
                     <h4>Timeline</h4>
                     <div class="mt-5" id="tweets">
