@@ -80,7 +80,12 @@ function traerTweets() {
     success: function (tuits) {
       console.log(tuits);
       let output = "";
+      let pag ="";
       $.each(tuits, (index, tuit) => {
+        //console.log(tuit.id_str);
+        let pag="https://twitter.com/i/web/status/"+tuit.id_str;
+        //console.log(pag);
+        
         output += `
                 <div class="jumbotron jumbotron-fluid" id="${index}"  >
                   <div class="container"  >
@@ -89,10 +94,14 @@ function traerTweets() {
                       <p>${tuit.created_at}</p>
 
                       <img style="width: 100%;" src="${tuit.user.profile_banner_url}">
+                      <br>
+                      <br>
+                      <a href="${pag}" target="_blank" class="btn btn-dark">Ver en Twiiter</a>
                   </div>
                 </div>
        <br> <br>
               `;
+      
       });
       // console.log(output);
       $("#tweets").html(output);
