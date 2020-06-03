@@ -152,12 +152,12 @@ a.navbar-brand:hover {
   background: beige;
 }
 #logo h1 {
-  font-family: "Fantasy";
-  font-size: 8vh;
+  font-family: cursive;
+  font-size: 320%;
   letter-spacing: 4px;
   line-height: 180%;
   background: red;
-  color: white;
+  color: azure;
   text-align: center;
   width: 100%;
   height: 165px;
