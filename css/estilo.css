@@ -323,7 +323,7 @@ section h4 {
 .mt-5 {
   //display: inline-table;
 }
-/*
+
 @media (min-width: 960px) {
   #movies .col-md-3 .well {
     height: 390px;
@@ -332,7 +332,7 @@ section h4 {
     height: 240px;
   }
 }
-*/
+
 html,
 body,
 .side-nav {
