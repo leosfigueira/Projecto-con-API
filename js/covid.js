@@ -1,5 +1,6 @@
-function getdata() {
-  let countryselected = $("#idpais").val();
+function getdata(string) {
+  console.log(string);
+  let countryselected = string;//$("#idpais").val();
   axios
     .get(
       "https://api.covid19api.com/total/country/" + countryselected + ""
