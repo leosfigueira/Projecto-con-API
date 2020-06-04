@@ -18,7 +18,6 @@ function getdatacovid() {
       let output2 = "";
       output2 += `
          <tr>
-          <th scope="col">#</th>
           <th scope="col">País</th>
           <th scope="col">Fecha</th>
           <th scope="col">Nuevos Casos Confirmados</th>
@@ -28,16 +27,12 @@ function getdatacovid() {
           <th scope="col">Total de fallecidos</th>
           <th scope="col">Total de recuperados</th>
       </tr>
-  
   `;
       console.log(output2);
-
       $("#thead").html(output2);
-
       $.each(countriesall, (index, country) => {
         output += `
             <tr>
-                        <th scope="row">${index}</th> 
                         <td onclick="ver('${country.Country}')" id="pais" value="${country.Country}">${country.Country} </td> 
                         <td id="date">${country.Date}</td>
                         <td id="cases">${country.NewConfirmed}</td>
@@ -46,14 +41,13 @@ function getdatacovid() {
                         <td id="cases">${country.TotalConfirmed}</td>
                         <td id="cases">${country.TotalDeaths}</td>
                           <td id="cases">${country.TotalRecovered}</td>
-
                       </tr>
           `;
         // console.log(pais.value);
       });
       $("#tbody").html(output);
       //agrego order
-      $("th").click(function ordenar() {
+      $("th").click(function () {
         var table = $(this).parents("table").eq(0);
         var rows = table
           .find("tr:gt(0)")
@@ -68,7 +62,6 @@ function getdatacovid() {
         }
         setIcon($(this), this.asc);
       });
-
       function comparer(index) {
         return function (a, b) {
           var valA = getCellValue(a, index),
@@ -78,11 +71,9 @@ function getdatacovid() {
             : valA.localeCompare(valB);
         };
       }
-
       function getCellValue(row, index) {
         return $(row).children("td").eq(index).html();
       }
-
       function setIcon(element, asc) {
         $("th").each(function (index) {
           $(this).removeClass("sorting");
@@ -96,7 +87,6 @@ function getdatacovid() {
     });
 }
 //getdatacovid();
-
 function getdata2(string) {
   let output = "";
   let output2 = "";
@@ -118,10 +108,9 @@ function getdata2(string) {
       // let cases = response.data[0].Cases;
       console.log(response);
       let countries = response.data;
-
       output2 += `
       <tr>
-      <th scope="col">#</th>
+      <th scope="col">Día nbr</th>
       <th scope="col">País</th>
       <th scope="col">Fecha</th>
       <th scope="col">Casos Confirmados</th>
@@ -129,12 +118,9 @@ function getdata2(string) {
       <th scope="col">Casos Recuperados</th>
       <th scope="col">Fallecidos</th>
   </tr>
-  
   `;
       console.log(output2);
-
       $("#thead").html(output2);
-
       $.each(countries, (index, country) => {
         output += `
             <tr>
@@ -165,7 +151,6 @@ function getdata2(string) {
         }
         setIcon($(this), this.asc);
       });
-
       function comparer(index) {
         return function (a, b) {
           var valA = getCellValue(a, index),
@@ -175,11 +160,9 @@ function getdata2(string) {
             : valA.localeCompare(valB);
         };
       }
-
       function getCellValue(row, index) {
         return $(row).children("td").eq(index).html();
       }
-
       function setIcon(element, asc) {
         $("th").each(function (index) {
           $(this).removeClass("sorting");
@@ -192,10 +175,8 @@ function getdata2(string) {
       }
     });
 }
-
 function ver(parametro) {
   console.log(parametro);
-
   //window.location="covid19.html";
   getdata2(parametro);
 }

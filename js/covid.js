@@ -1,9 +1,11 @@
 function getdata(string) {
   console.log(string);
-  let countryselected = string;//$("#idpais").val();
+  let countryselected = string; //$("#idpais").val();
   axios
     .get(
-      "https://cors-anywhere.herokuapp.com/https://api.covid19api.com/total/country/" + countryselected + ""
+      "https://cors-anywhere.herokuapp.com/https://api.covid19api.com/total/country/" +
+      countryselected +
+      ""
       //"https://api.covid19api.com/countries"
       //"https://api.covid19api.com/all"
       // "https://api.covid19api.com/dayone/country/" +
