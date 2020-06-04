@@ -1,7 +1,8 @@
 function getdatacovid() {
   let countryselected = $("#idpais").val();
   axios
-    .get("https://api.covid19api.com/summary"
+    .get(
+      "https://api.covid19api.com/summary"
       //"https://api.covid19api.com/countries"
       //"https://api.covid19api.com/all"
       // "https://api.covid19api.com/dayone/country/" +
@@ -29,9 +30,9 @@ function getdatacovid() {
       </tr>
   
   `;
-  console.log(output2);
+      console.log(output2);
 
-  $("#thead").html(output2);
+      $("#thead").html(output2);
 
       $.each(countriesall, (index, country) => {
         output += `
@@ -48,20 +49,61 @@ function getdatacovid() {
 
                       </tr>
           `;
-         // console.log(pais.value);
+        // console.log(pais.value);
       });
       $("#tbody").html(output);
+      //agrego order
+      $("th").click(function ordenar() {
+        var table = $(this).parents("table").eq(0);
+        var rows = table
+          .find("tr:gt(0)")
+          .toArray()
+          .sort(comparer($(this).index()));
+        this.asc = !this.asc;
+        if (!this.asc) {
+          rows = rows.reverse();
+        }
+        for (var i = 0; i < rows.length; i++) {
+          table.append(rows[i]);
+        }
+        setIcon($(this), this.asc);
+      });
+
+      function comparer(index) {
+        return function (a, b) {
+          var valA = getCellValue(a, index),
+            valB = getCellValue(b, index);
+          return $.isNumeric(valA) && $.isNumeric(valB)
+            ? valA - valB
+            : valA.localeCompare(valB);
+        };
+      }
+
+      function getCellValue(row, index) {
+        return $(row).children("td").eq(index).html();
+      }
+
+      function setIcon(element, asc) {
+        $("th").each(function (index) {
+          $(this).removeClass("sorting");
+          $(this).removeClass("asc");
+          $(this).removeClass("desc");
+        });
+        element.addClass("sorting");
+        if (asc) element.addClass("asc");
+        else element.addClass("desc");
+      }
     });
 }
 //getdatacovid();
 
 function getdata2(string) {
   let output = "";
-      let output2 = "";
+  let output2 = "";
   $("#tbody").html(output);
   $("#thead").html(output2);
   console.log(string);
-  let countryselected = string;//$("#idpais").val();
+  let countryselected = string; //$("#idpais").val();
   axios
     .get(
       "https://api.covid19api.com/total/country/" + countryselected + ""
@@ -76,7 +118,7 @@ function getdata2(string) {
       // let cases = response.data[0].Cases;
       console.log(response);
       let countries = response.data;
-      
+
       output2 += `
       <tr>
       <th scope="col">#</th>
@@ -89,12 +131,12 @@ function getdata2(string) {
   </tr>
   
   `;
-  console.log(output2);
+      console.log(output2);
 
-  $("#thead").html(output2);
+      $("#thead").html(output2);
 
       $.each(countries, (index, country) => {
-          output += `
+        output += `
             <tr>
                         <td scope="row">${index}</td>
                         <td id="country">${country.Country}</td>
@@ -107,13 +149,53 @@ function getdata2(string) {
           `;
       });
       $("#tbody").html(output);
+      //agrego order
+      $("th").click(function ordenar() {
+        var table = $(this).parents("table").eq(0);
+        var rows = table
+          .find("tr:gt(0)")
+          .toArray()
+          .sort(comparer($(this).index()));
+        this.asc = !this.asc;
+        if (!this.asc) {
+          rows = rows.reverse();
+        }
+        for (var i = 0; i < rows.length; i++) {
+          table.append(rows[i]);
+        }
+        setIcon($(this), this.asc);
+      });
+
+      function comparer(index) {
+        return function (a, b) {
+          var valA = getCellValue(a, index),
+            valB = getCellValue(b, index);
+          return $.isNumeric(valA) && $.isNumeric(valB)
+            ? valA - valB
+            : valA.localeCompare(valB);
+        };
+      }
+
+      function getCellValue(row, index) {
+        return $(row).children("td").eq(index).html();
+      }
+
+      function setIcon(element, asc) {
+        $("th").each(function (index) {
+          $(this).removeClass("sorting");
+          $(this).removeClass("asc");
+          $(this).removeClass("desc");
+        });
+        element.addClass("sorting");
+        if (asc) element.addClass("asc");
+        else element.addClass("desc");
+      }
     });
 }
 
-function ver(parametro){
+function ver(parametro) {
   console.log(parametro);
-  
+
   //window.location="covid19.html";
   getdata2(parametro);
-  
 }

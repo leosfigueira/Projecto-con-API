@@ -338,3 +338,22 @@ body,
 .side-nav {
   height: 100%;
 }
+table tr th {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.sorting {
+  background-color: #D4D4D4;
+}
+
+.asc:after {
+  content: ' ↑';
+}
+
+.desc:after {
+  content: " ↓";
+}
