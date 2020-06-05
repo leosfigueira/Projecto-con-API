@@ -37,6 +37,22 @@ function getuser() {
       "Usuario Aleatorio: " + usuario;
   }
 }
+function completar(){
+   getuser();
+  let output7 = "";
+  output7 += `
+  <a id="usuario" class="twitter-timeline" padding-left: 15px
+  padding-right: 15px data-width="600" data-height="600" data-theme="dark" data-aria-polite="assertive"
+  href="https://twitter.com/${usuario}"
+  ></a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              `;
+      
+     
+      $("#usuario").html(output7);
+  console.log(output7);
+  document.getElementById("menu1").style.height= "105%";
+}
 //Usando jquery:
 function getToken() {
   $.ajax({

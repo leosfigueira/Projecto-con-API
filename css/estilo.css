@@ -363,3 +363,7 @@ table tr th {
   height: 8px;    /* Tamaño del scroll en horizontal */
   display: none;  /* Ocultar scroll */
 }
+ .twitter-timeline twitter-timeline-rendered{
+  width: 100%;
+  padding: 30px;
+}
