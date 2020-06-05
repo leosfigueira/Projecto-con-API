@@ -37,8 +37,8 @@ function getuser() {
       "Usuario Aleatorio: " + usuario;
   }
 }
-function completar(){
-   getuser();
+function completar() {
+  getuser();
   let output7 = "";
   output7 += `
   <a id="usuario" class="twitter-timeline" padding-left: 15px
@@ -47,14 +47,12 @@ function completar(){
   ></a>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               `;
-      
-     
-      $("#usuario").html(output7);
+
+  $("#usuario").html(output7);
   console.log(output7);
-  document.getElementById("menu1").style.height= "115%";
+  document.getElementById("menu1").style.height = "115%";
   document.getElementById("usuario").style.display = "block";
-  document.getElementById("user").placeholder =
-      "Usuario Aleatorio: " + usuario;
+  document.getElementById("user").placeholder = "Usuario Aleatorio: " + usuario;
 }
 //Usando jquery:
 function getToken() {
@@ -148,11 +146,5 @@ function traerTweets() {
     },
   });
 }
-var myCustomScrollbar = document.querySelector(".my-custom-scrollbar");
-var ps = new PerfectScrollbar(myCustomScrollbar);
-var scrollbarY = myCustomScrollbar.querySelector(".ps__rail-y");
-myCustomScrollbar.onscroll = function () {
-  scrollbarY.style.cssText = `top: ${
-    this.scrollTop
-  }px!important; height: 400px; right: ${-this.scrollLeft}px`;
-};
+
+completar();
