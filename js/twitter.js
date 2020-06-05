@@ -42,7 +42,7 @@ function completar(){
   let output7 = "";
   output7 += `
   <a id="usuario" class="twitter-timeline" padding-left: 15px
-  padding-right: 15px data-width="600" data-height="600" data-theme="dark" data-aria-polite="assertive"
+  padding-right: 15px data-width="700" data-height="600" data-theme="dark" data-aria-polite="assertive"
   href="https://twitter.com/${usuario}"
   ></a>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -51,7 +51,10 @@ function completar(){
      
       $("#usuario").html(output7);
   console.log(output7);
-  document.getElementById("menu1").style.height= "105%";
+  document.getElementById("menu1").style.height= "115%";
+  document.getElementById("usuario").style.display = "block";
+  document.getElementById("user").placeholder =
+      "Usuario Aleatorio: " + usuario;
 }
 //Usando jquery:
 function getToken() {
@@ -106,8 +109,8 @@ function traerTweets() {
         let pag = "https://twitter.com/i/web/status/" + tuit.id_str;
         //console.log(pag);
         output += `
-        <div Style="background:black;" class="jumbotron jumbotron-fluid" id="${index}">
-        <div  class="container">
+        <div Style="background:black;" class="container-fluid" id="${index}">
+        <div  class="container-fluid">
             <img style="width: 100%;" src="${tuit.user.profile_banner_url}">
             <br>
             <br>
@@ -128,18 +131,18 @@ function traerTweets() {
       //$("#tweets").style.display = "block";
       document.getElementById("tweets").style.display = "block";
       document.getElementById("tweets77").style.display = "block";
-      document.getElementById("menu1").style.height = "170%";
+      document.getElementById("menu1").style.height = "128%";
       //console.log("#tweets");
     },
     error: function (req, status, err) {
       console.log(req, status, err);
       let output = "";
       output += `
-      <div class="card example-1 scrollbar-ripe-malinka">
-      <div class="card-body">
+      <div  class="container-fluid">
+      <div class="well text-center">
             <h5>No hay tuits para mostrar con los datos buscados</h5>
         </div>
-      </div>
+      </>
   `;
       $("#tweets").html(output);
     },

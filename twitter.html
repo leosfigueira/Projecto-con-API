@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link type="text/css" href="css/estilo.css" rel="stylesheet">
@@ -19,7 +20,7 @@
     </header>
 
     <body>
-        <nav class="side-nav navbar navbar-default" id="menu1">
+        <nav class="container-fluid" id="menu1">
             <ul>
                 <li><a href="peliculas2.html">Peliculas</a></li>
                 <li><a href="user.html">Usuario Aleatorio</a></li>
@@ -44,12 +45,20 @@
                     </p>
                     <h4>Timeline</h4>
                 </section>
-                <div style="display: none;" id="tweets77" class="my-custom-scrollbar my-custom-scrollbar-primary">
-                    <div style="display: none;" id="tweets">
+                <div class="container-fluid">
+                    <div style="display: none;" id="tweets77">
+                        <div class="my-custom-scrollbar my-custom-scrollbar-primary" class="container-fluid"
+                            style="display: none;" id="tweets">
+                        </div>
                     </div>
                 </div>
             </div>
             <button class="btn btn-outline-danger" onclick="getToken();">Renovar token</button>
+            <div>
+
+
+            </div>
+
         </section>
         <footer>
             <p> TygWeb 2020 &copy; .
