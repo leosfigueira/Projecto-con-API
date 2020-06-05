@@ -3,18 +3,17 @@
 
 <head>
     <link type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        rel="stylesheet">
+        rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Esto es un comentario -->
-
     <title>TP 1 - Tecnologia y gestion web - Figueira Leonel</title>
-    <link type="text/css" href="css/estilo.css" rel="stylesheet">
+    <link type="text/css" href="css/estilo.css" rel="stylesheet" />
 </head>
 <header class="flex-column flex-md-row bd-navbar">
     <div id="logo">
-        <a href="index.html"><img src="images/mural.jpg" align="left"></a>
+        <a href="index.html"><img src="images/mural.jpg" align="left" /></a>
         <h1 class="bd-title">TP Nro 1- Figueira, Leonel</h1>
     </div>
 </header>
@@ -25,41 +24,25 @@
             <li><a href="peliculas2.html">Peliculas</a></li>
             <li><a href="user.html">Usuario Aleatorio</a></li>
             <li><a href="twitter.html">Twiiter</a></li>
-            <li><a href="covid19.html">Covid-19 - Detalle de Casos diarios por país</a></li>
-            <li><a href="covid19-Resumen.html">Covid-19 - Estado actual global</a></li>
+            <li>
+                <a href="covid19.html">Covid-19 - Detalle de Casos diarios por país</a>
+            </li>
+            <li>
+                <a href="covid19-Resumen.html">Covid-19 - Estado actual global</a>
+            </li>
         </ul>
     </nav>
-
     <section id="contenido">
-
         <div class="container my-5 text-center">
-
-
-            <button class="btn btn-danger w-100" onclick="getdata(idpais.value)">Obtener datos actualizados</button>
+            <button class="btn btn-danger w-100" onclick="getdata(idpais.value)">
+                Obtener datos actualizados
+            </button>
             <div class="form-group">
-
                 <label class="text-dark" for="category"></label>
-                <select class="form-control" id="idpais" onclick="getdata(idpais.value)">
-                    <option value="Argentina">Argentina</option>
-                    <option value="Brazil">Brasil</option>
-                    <option value="chile">Chile</option>
-                    <option value="Cuba">Cuba</option>
-                    <option value="Colombia">Colombia</option>
-                    <option value="Peru">Peru</option>
-                    <option value="Uruguay">Uruguay</option>
-                    <option value="Paraguay">Paraguay</option>
-                    <option value="Bolivia">Bolivia</option>
-                    <option value="Italy">Italia</option>
-                    <option value="Spain">España</option>
-                    <option value="Venezuela">Venezuela</option>
-                    <option value="Mexico">Mexico</option>
-                    <option value="Ecuador">Ecuador</option>
-                    <option value="Japan">Japon</option>
-                    <option value="Sweden">Suecia</option>
+                <select class="form-control form-control-sm" id="idpais" onclick="getdata(idpais.value)">
                 </select>
-
                 <div class="mt-5" id="contenidos">
-                    <div class="table-responsive" id="respuesta" style="display:none">
+                    <div class="table-responsive" id="respuesta" style="display: none; height: 500px;">
                         <table class="table table-striped table-dark table-hover" id="tabla">
                             <thead>
                                 <tr>
@@ -73,18 +56,15 @@
                                     <th scope="col">Fallecidos</th>
                                 </tr>
                             </thead>
-                            <tbody id="tbody">
-
-                            </tbody>
+                            <tbody id="tbody"></tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <footer>
-        <p> TygWeb 2020 &copy; .</p>
+        <p>TygWeb 2020 &copy; .</p>
     </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--<script src="js/main.js"></script>-->

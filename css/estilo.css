@@ -5,13 +5,18 @@
 body {
   background-color: black;
   color: white;
-
+  background: linear-gradient(black, red)
   width: 100%;
   height: 100vw;
-  
 }
 div.jumbotron {
-  background-color: black;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgba(255, 0, 0, 1)
+  );
+  background-color: transparent;
+  padding-top: 50px;
 }
 #movies img,
 #movie img {
@@ -157,9 +162,7 @@ a.navbar-brand:hover {
   font-size: 320%;
   letter-spacing: 4px;
   line-height: 180%;
-   
   text-align: center;
-  
   width: 100%;
   height: 165px;
   margin-bottom: 0px;
@@ -179,16 +182,10 @@ a.navbar-brand:hover {
   font-weight: 400;
   background-image: linear-gradient(
     to right,
-    
     rgba(255, 0, 0, 1),
     black
-    
   );
-   
-  
-  
 }
-
 #contenido {
   width: 80%;
   float: right;
@@ -199,6 +196,9 @@ a.navbar-brand:hover {
   );
   padding-top: 0px;
 }
+#contenidopeli{
+  justify-content:right;
+}
 #movies video {
   margin: 0 auto;
 }
@@ -207,7 +207,6 @@ a.navbar-brand:hover {
   width: 80%;
   float: right;
   border-top: 40px;
-
   font-size: 40px;
   color: red;
   text-align: center;
@@ -244,7 +243,7 @@ a.navbar-brand:hover {
     rgba(255, 0, 0, 1)
   );
   font-size: 25px;
-  height: 100%;
+  height: 70%;
   width: 20%;
   float: left;
   position: absolute;
@@ -274,7 +273,6 @@ footer p {
   font-family: Arial;
   font-size: 135%;
   line-height: 2.5;
-  
 }
 footer {
   height: 10%;
@@ -282,7 +280,6 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
- 
 }
 header h1 .tw {
   color: white;
@@ -323,7 +320,6 @@ section h4 {
 .mt-5 {
   //display: inline-table;
 }
-
 @media (min-width: 960px) {
   #movies .col-md-3 .well {
     height: 390px;
@@ -332,7 +328,6 @@ section h4 {
     height: 240px;
   }
 }
-
 html,
 body,
 .side-nav {
@@ -345,15 +340,26 @@ table tr th {
   -ms-user-select: none;
   user-select: none;
 }
-
 .sorting {
-  background-color: #D4D4D4;
+  background-color: rgb(245, 24, 24);
 }
-
 .asc:after {
   content: ' ↑';
 }
-
 .desc:after {
   content: " ↓";
+}
+.my-custom-scrollbar {
+  position: relative;
+  width: 780px;
+  height: 600px;
+  overflow: auto;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding: 10px;
+}
+.container::-webkit-scrollbar {
+  width: 8px;     /* Tamaño del scroll en vertical */
+  height: 8px;    /* Tamaño del scroll en horizontal */
+  display: none;  /* Ocultar scroll */
 }

@@ -13,6 +13,7 @@ $(function () {
     elemento.setAttribute("aria-expanded", false);
     elemento2 = document.getElementById("menu");
     elemento2.setAttribute("class", "dropdown-menu dropdown-menu-right");
+    document.getElementById("menu1").style.height= "78%";
   });
 });
 $(document).ready(() => {
@@ -89,6 +90,7 @@ function getMovies(nombre, anio, tipo) {
     .catch((err) => {
       console.log(err);
     });
+    document.getElementById("menu1").style.height= "125%";
 }
 function displayt(id) {
   //console.log(id);
@@ -176,4 +178,5 @@ function getMovie() {
     .catch((err) => {
       console.log(err);
     });
+    document.getElementById("menu1").style.height= "125%";
 }

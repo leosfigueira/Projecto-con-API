@@ -1,6 +1,26 @@
 
+function getcountries() {
+  axios.get("https://api.covid19api.com/countries").then((response) => {
+    //console.log(response.data);
+    countries = response.data;
+    output0 = "";
+    $.each(countries, (index, country) => {
+      if(country.Country=="Argentina") {
+        output0 += `         
+                    <option selected value="${country.Country}">${country.Country}</option>
+          `;
+      }
+      output0 += `         
+                    <option value="${country.Country}">${country.Country}</option>
+          `;
+      
+    });
+    $("#idpais").html(output0);
+  });
+}
+getcountries();
 function getdata(string) {
-  console.log(string);
+  //console.log(string);
   let countryselected = string; //$("#idpais").val();
   axios
     .get(
@@ -14,7 +34,7 @@ function getdata(string) {
     .then((response) => {
       document.getElementById("respuesta").style.display = "block";
       // let cases = response.data[0].Cases;
-      //console.log(response);
+    //  console.log(response);
       let countries = response.data;
       let output = "";
       let totalcasosdeldia = 0;
@@ -49,4 +69,5 @@ function getdata(string) {
       });
       $("#tbody").html(output);
     });
+    document.getElementById("menu1").style.height= "120%";
 }

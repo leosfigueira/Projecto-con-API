@@ -1,6 +1,6 @@
 var bearer =
   "AAAAAAAAAAAAAAAAAAAAALkZEwEAAAAA6Pt0kRnnFL6cKazHDJGqPTtFmTU%3D57W0qYohs8SFtEmjVHrcgHUmsKVP3pmCJ4VgRPyw0xEcMLIpLE";
-
+document.getElementById("menu1").style.height = "78%";
 function getuser() {
   usuario = document.getElementById("user").value;
   // console.log(usuario);
@@ -25,7 +25,11 @@ function getuser() {
     useraleatorio[16] = "Liberotyc";
     useraleatorio[17] = "infobae";
     useraleatorio[18] = "telefenoticias";
-
+    useraleatorio[19] = "leolp16";
+    useraleatorio[20] = "Cronica";
+    useraleatorio[21] = "alferdez";
+    useraleatorio[22] = "CasaRosada";
+    useraleatorio[23] = "LigadeCampeones";
     var userlenght = useraleatorio.length - 1;
     var mostrar = Math.round(Math.random() * (userlenght - 1));
     usuario = useraleatorio[mostrar];
@@ -85,48 +89,51 @@ function traerTweets() {
         //console.log(tuit.id_str);
         let pag = "https://twitter.com/i/web/status/" + tuit.id_str;
         //console.log(pag);
-
         output += `
-        <div class="jumbotron jumbotron-fluid" id="${index}">
-        <div class="container">
-    
+        <div Style="background:black;" class="jumbotron jumbotron-fluid" id="${index}">
+        <div  class="container">
             <img style="width: 100%;" src="${tuit.user.profile_banner_url}">
             <br>
             <br>
-
             <div class="well text-center">
-            
                 <h1 style="color:red; font-weight: bold; font-family:cursive;">${tuit.user.name}</h1>
-           
                 <p class="lead">${tuit.text}</p>
-                
                 <p>${tuit.created_at}</p>
             </div>
-    
-            
             <br>
             <a href="${pag}" target="_blank" class="btn btn-danger">Ver en Twiiter</a>
         </div>
     </div>
     <br> <br>
               `;
-
       });
       // console.log(output);
       $("#tweets").html(output);
+      //$("#tweets").style.display = "block";
+      document.getElementById("tweets").style.display = "block";
+      document.getElementById("tweets77").style.display = "block";
+      document.getElementById("menu1").style.height = "170%";
       //console.log("#tweets");
     },
     error: function (req, status, err) {
       console.log(req, status, err);
       let output = "";
       output += `
-      <div class="col-md-12">
-        <div class="well text-center">
+      <div class="card example-1 scrollbar-ripe-malinka">
+      <div class="card-body">
             <h5>No hay tuits para mostrar con los datos buscados</h5>
         </div>
       </div>
   `;
-  $("#tweets").html(output);
+      $("#tweets").html(output);
     },
   });
 }
+var myCustomScrollbar = document.querySelector(".my-custom-scrollbar");
+var ps = new PerfectScrollbar(myCustomScrollbar);
+var scrollbarY = myCustomScrollbar.querySelector(".ps__rail-y");
+myCustomScrollbar.onscroll = function () {
+  scrollbarY.style.cssText = `top: ${
+    this.scrollTop
+  }px!important; height: 400px; right: ${-this.scrollLeft}px`;
+};

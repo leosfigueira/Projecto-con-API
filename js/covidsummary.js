@@ -28,7 +28,7 @@ function getdatacovid() {
           <th scope="col">Total de recuperados</th>
       </tr>
   `;
-      console.log(output2);
+      //console.log(output2);
       $("#thead").html(output2);
       $.each(countriesall, (index, country) => {
         output += `
@@ -85,6 +85,7 @@ function getdatacovid() {
         else element.addClass("desc");
       }
     });
+    document.getElementById("menu1").style.height= "120%";
 }
 //getdatacovid();
 function getdata2(string) {
@@ -108,11 +109,15 @@ function getdata2(string) {
       // let cases = response.data[0].Cases;
       console.log(response);
       let countries = response.data;
+      let totalcasosdeldia = 0;
+      let diaanterior = 0;
+      let casosdeldia = 0;
       output2 += `
       <tr>
       <th scope="col">Día nbr</th>
       <th scope="col">País</th>
       <th scope="col">Fecha</th>
+      <th scope="col">Casos Confirmados del dia</th>
       <th scope="col">Casos Confirmados</th>
       <th scope="col">Casos Activos</th>
       <th scope="col">Casos Recuperados</th>
@@ -122,11 +127,20 @@ function getdata2(string) {
       console.log(output2);
       $("#thead").html(output2);
       $.each(countries, (index, country) => {
+        totalcasosdeldia = country.Confirmed;
+        //console.log("total de casos confirmados nuevos " + totalcasosdeldia);
+        //console.log("antes de validar casosdeldiaanterior  " + diaanterior);
+        //console.log("antes de validar casosdeldia  " + casosdeldia);
+        if (diaanterior != totalcasosdeldia) {
+          casosdeldia = totalcasosdeldia - diaanterior;
+        }
+        diaanterior = totalcasosdeldia;
         output += `
             <tr>
                         <td scope="row">${index}</td>
                         <td id="country">${country.Country}</td>
                         <td id="date">${country.Date}</td>
+                        <td id="cases">${casosdeldia}</td>
                         <td id="cases">${country.Confirmed}</td>
                         <td id="cases">${country.Active}</td>
                         <td id="cases">${country.Recovered}</td>
@@ -174,6 +188,7 @@ function getdata2(string) {
         else element.addClass("desc");
       }
     });
+    document.getElementById("menu1").style.height= "120%";
 }
 function ver(parametro) {
   console.log(parametro);
