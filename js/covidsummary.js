@@ -33,7 +33,7 @@ function getdatacovid() {
       $.each(countriesall, (index, country) => {
         output += `
             <tr>
-                        <td onclick="ver('${country.Country}')" id="pais" value="${country.Country}">${country.Country} </td> 
+                        <td style="cursor: pointer;" onclick="ver('${country.Country}')" id="pais" value="${country.Country}">${country.Country} </td> 
                         <td id="date">${country.Date}</td>
                         <td id="cases">${country.NewConfirmed}</td>
                         <td id="cases">${country.NewDeaths}</td>
