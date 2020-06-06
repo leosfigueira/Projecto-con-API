@@ -164,7 +164,6 @@ a.navbar-brand:hover {
   letter-spacing: 4px;
   line-height: 180%;
   text-align: center;
-  
   height: 165px;
   margin-bottom: 0px;
   padding-top: 25px;
@@ -210,7 +209,6 @@ a.navbar-brand:hover {
   float: right;
   font-size: 3.5vw;
   border-top: 40px;
-  
   color: red;
   text-align: center;
   justify-content: center;
@@ -270,7 +268,6 @@ a.navbar-brand:hover {
   padding-left: 10px;
   font-family: Arial;
 }
-
 footer {
   height: 30px;
   background-color: red;
@@ -279,7 +276,6 @@ footer {
   width: 100%;
 }
 footer p {
-  
   text-align: right;
   font-family: Arial;
   font-size: 15px;
@@ -344,8 +340,11 @@ table tr th {
   -ms-user-select: none;
   user-select: none;
 }
+.table-responsive thead th { position: sticky; top: 0;
+  background-color: #212529;
+cursor: pointer; }
 .sorting {
-  background-color: rgb(245, 24, 24);
+  background-color: rgb(245, 24, 24)!important;
 }
 .asc:after {
   content: ' ↑';
@@ -376,7 +375,6 @@ table tr th {
   float: right;
   background-image: linear-gradient(
     to right,
-   
     rgba(255, 0, 0, 1),
     rgba(255, 0, 0, 0),
   );
