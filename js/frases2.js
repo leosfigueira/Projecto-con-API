@@ -51,3 +51,5 @@ function fraseAleatoria() {
 fraseAleatoria();
 
 setInterval("fraseAleatoria()", 4000);
+document.getElementById("menu1").style.height= "100vh";
+

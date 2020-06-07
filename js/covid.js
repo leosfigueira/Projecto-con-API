@@ -69,5 +69,5 @@ function getdata(string) {
       });
       $("#tbody").html(output);
     });
-    document.getElementById("menu1").style.height= "110%";
+    document.getElementById("menu1").style.height= "780px";
 }

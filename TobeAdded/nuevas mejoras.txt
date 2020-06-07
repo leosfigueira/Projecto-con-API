@@ -1,0 +1,7 @@
+Notas del 5/6/2020
+1. Centrar en una pagina base y manejar el resto desde js.
+2. hacer la web responsive.
+3. usar boostrap o algun otro (pero el mismo en toda la app).
+4. Usar enbebido de twiiter y con la pi releaizar post para  mostrarlos ahi.
+5. ingetrar con base de datos.
+6. Puedo usar contenedor docker para algo?

@@ -85,7 +85,7 @@ function getdatacovid() {
         else element.addClass("desc");
       }
     });
-  document.getElementById("menu1").style.height = "100%";
+  document.getElementById("menu1").style.height = "710px";
 }
 //getdatacovid();
 function getdata2(string) {
@@ -188,7 +188,7 @@ function getdata2(string) {
         else element.addClass("desc");
       }
     });
-  document.getElementById("menu1").style.height = "100%";
+  document.getElementById("menu1").style.height = "710px";
 }
 function ver(parametro) {
   console.log(parametro);
