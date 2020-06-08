@@ -30,6 +30,26 @@ function getuser() {
     useraleatorio[21] = "alferdez";
     useraleatorio[22] = "CasaRosada";
     useraleatorio[23] = "LigadeCampeones";
+    useraleatorio[24] = "CFKArgentina";
+    useraleatorio[25] = "todonoticias";
+    useraleatorio[26] = "marley_ok";
+    useraleatorio[27] = "mauriciomacri";
+    useraleatorio[28] = "eltreceoficial";
+    useraleatorio[29] = "LANACION";
+    useraleatorio[30] = "telefe";
+    useraleatorio[31] = "germanpaoloski";
+    useraleatorio[32] = "clarincom";
+    useraleatorio[33] = "TeamMessi";
+    useraleatorio[34] = "SinCodificarTV";
+    useraleatorio[35] = "Mascherano";
+    useraleatorio[36] = "cuervotinelli";
+    useraleatorio[37] = "GuardianesEDLP";
+    useraleatorio[38] = "hayescuelaedelp";
+    useraleatorio[39] = "ShowMatch";
+    useraleatorio[40] = "curioso_soy";
+    useraleatorio[41] = "PolloVignolo";
+    useraleatorio[42] = "ElChisteDelDia";
+    useraleatorio[42] = "GuardianesEDLP";
     var userlenght = useraleatorio.length - 1;
     var mostrar = Math.round(Math.random() * (userlenght - 1));
     usuario = useraleatorio[mostrar];
@@ -42,15 +62,15 @@ function completar() {
   let output7 = "";
   output7 += `
   <a id="usuario" class="twitter-timeline" padding-left: 15px
-  padding-right: 15px data-width="700" data-height="600" data-theme="dark" data-aria-polite="assertive"
+  padding-right: 15px data-width="700" data-height="750" data-theme="dark" data-aria-polite="assertive"
   href="https://twitter.com/${usuario}"
+  data-chrome="nofooter noborders"
   ></a>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               `;
-
   $("#usuario").html(output7);
   console.log(output7);
-  document.getElementById("menu1").style.height = "115%";
+  document.getElementById("menu1").style.height = "95vh";
   document.getElementById("usuario").style.display = "block";
   document.getElementById("user").placeholder = "Usuario Aleatorio: " + usuario;
 }
@@ -109,7 +129,7 @@ function traerTweets() {
         output += `
         <div Style="background:black;" class="container-fluid" id="${index}">
         <div  class="container-fluid">
-            <img style="width: 100%;" src="${tuit.user.profile_banner_url}">
+            <img style="width: 100%; " src="${tuit.user.profile_banner_url}">
             <br>
             <br>
             <div class="well text-center">
@@ -146,5 +166,4 @@ function traerTweets() {
     },
   });
 }
-
 completar();

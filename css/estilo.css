@@ -136,6 +136,12 @@ a.navbar-brand:hover {
 #menu1 a:hover {
   background: red;
 }
+#tabla  td:hover {
+  background: gray;
+}
+.paissel:hover {
+  background: red!important;
+}
 #movies img {
   padding: 4%;
   width: 100%;
@@ -158,27 +164,21 @@ a.navbar-brand:hover {
   background: beige;
 }
 #logo  {
-  
   width:100%; min-width: 150px;max-width: 100%;
- 
   height: 150px;
   padding: 15px;
-  
   background-image: linear-gradient(
     to right,
     black,
     rgba(255, 0, 0, 1)
-    
   );
 }
 #logo h1 {
   font-family:cursive;
-  
   width:100%; min-width: 150px;max-width: 100%;
   letter-spacing: 4px;
   line-height: 180%;
   text-align: center;
-  
   margin-bottom: 0px;
   padding-top: 25px;
   padding-left: 20px;
@@ -190,8 +190,6 @@ a.navbar-brand:hover {
   width: 125px;
   height: 125px;
   margin-bottom: 0px;
-  
-
 }
 #logo .bd-title{
   text-shadow: 5px 10px 10px #FF0000;
@@ -201,7 +199,6 @@ a.navbar-brand:hover {
     to right,
     black,
     rgba(255, 0, 0, 1)
-    
   );
   font-size: 4vw;
 }

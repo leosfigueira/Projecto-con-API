@@ -19,7 +19,6 @@ function getdatacovid() {
       output2 += `
          <tr>
           <th scope="col">País</th>
-          <th scope="col">Fecha</th>
           <th scope="col">Nuevos Casos Confirmados</th>
           <th scope="col">Nuevas muertes</th>
           <th scope="col">Nuevos Recuperados</th>
@@ -33,8 +32,7 @@ function getdatacovid() {
       $.each(countriesall, (index, country) => {
         output += `
             <tr>
-                        <td style="cursor: pointer;" onclick="ver('${country.Country}')" id="pais" value="${country.Country}">${country.Country} </td> 
-                        <td id="date">${country.Date}</td>
+                        <td style="cursor: pointer;" onclick="ver('${country.Country}')" id="pais" class="paissel" value="${country.Country}">${country.Country} </td> 
                         <td id="cases">${country.NewConfirmed}</td>
                         <td id="cases">${country.NewDeaths}</td>
                         <td id="cases">${country.NewRecovered}</td>
@@ -85,7 +83,7 @@ function getdatacovid() {
         else element.addClass("desc");
       }
     });
-  document.getElementById("menu1").style.height = "710px";
+  document.getElementById("menu1").style.height = "970px";
 }
 //getdatacovid();
 function getdata2(string) {
@@ -188,10 +186,40 @@ function getdata2(string) {
         else element.addClass("desc");
       }
     });
-  document.getElementById("menu1").style.height = "710px";
+  document.getElementById("menu1").style.height = "970px";
 }
 function ver(parametro) {
   console.log(parametro);
   //window.location="covid19.html";
   getdata2(parametro);
 }
+function getresumen() {
+  axios.get("https://api.covid19api.com/summary").then((response) => {
+    //document.getElementById("resme").style.display = "block";
+    // let cases = response.data[0].Cases;
+    //console.log(response.data.Countries);
+    let glob = response.data.Global;
+    console.log(glob);
+    let output = "";
+    output += `
+                <div>
+                <h2 style="color: white; text-align: center; font-size: 2.5rem; ;">
+                  Estadísticas globales hasta la fecha: </h2>
+                <p style="color: white; text-align: center; font-size: 1.25rem;">
+                  <strong style="background-color:#252222;"> Fecha: ${response.data.Date} </strong> <br>
+                  <u>Nuevos casos confirmados:</u> ${glob.NewConfirmed} <br>
+                  <u> Total de casos confirmados:</u> ${glob.TotalConfirmed} <br>
+                  <u> Nuevas muertes confirmadas:</u> ${glob.NewDeaths} <br>
+                  <u> Total de muertes confirmadas:</u> ${glob.TotalDeaths} <br>
+                  <u> Nuevos recuperados:</u> ${glob.NewRecovered} <br>
+                  <u> Total de recuperados:</u> ${glob.TotalRecovered} <br>
+                </p>
+              </div>
+          `;
+    // console.log(pais.value);
+    $("#resum").html(output);
+    //agrego order
+  });
+  document.getElementById("menu1").style.height = "970px";
+}
+getresumen();
