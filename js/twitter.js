@@ -70,7 +70,7 @@ function completar() {
               `;
   $("#usuario").html(output7);
   console.log(output7);
-  document.getElementById("menu1").style.height = "95vh";
+  document.getElementById("menu1").style.height = "870px";
   document.getElementById("usuario").style.display = "block";
   document.getElementById("user").placeholder = "Usuario Aleatorio: " + usuario;
 }
